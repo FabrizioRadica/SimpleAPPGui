@@ -17,8 +17,8 @@ public class AppManager : MonoBehaviour
     public AppStates states;
 
     public enum AppStates { 
-        avanti,
-        indietro,
+        go,
+        back,
         stay
     }
     
@@ -33,11 +33,11 @@ public class AppManager : MonoBehaviour
     void Update()
     {
         switch (states) {
-            case AppStates.avanti:
-                _AVANTI();
+            case AppStates.go:
+                _GO();
                 break;
-            case AppStates.indietro:
-                _INDIETRO();
+            case AppStates.back:
+                _BACK();
                 break;
             case AppStates.stay:
                 _STAY();
@@ -46,11 +46,11 @@ public class AppManager : MonoBehaviour
     }
 
 
-    public void _AVANTI() { 
+    public void _GO() { 
     
     }
 
-    public void _INDIETRO()
+    public void _BACK()
     {
 
     }
