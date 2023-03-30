@@ -10,10 +10,12 @@ public class AppManager : MonoBehaviour
 
     //PER DEBUG USO SERIALIZEFIELD
     [SerializeField] Text TitleView;
-    int actualView;
+    [SerializeField] Text PreviousTitle;
+    [SerializeField] int actualView;
     [SerializeField] float speedTransiction;
     bool isTransiction;
     int tempActualView;
+    string tempTitle;
     public AppStates states;
 
     public enum AppStates { 
@@ -57,10 +59,11 @@ public class AppManager : MonoBehaviour
 
     public void _STAY()
     {
+
         views.transform.GetChild(tempActualView).gameObject.SetActive(false);  //tempActive
         views.transform.GetChild(actualView).gameObject.SetActive(true); //actualActive
         TitleView.text= views.transform.GetChild(actualView).gameObject.GetComponent<ViewScript>().title;
-   
+        PreviousTitle.text = tempTitle;
     }
 
 
@@ -68,8 +71,9 @@ public class AppManager : MonoBehaviour
         if ((actualView < views.transform.childCount-1) && !isTransiction)
         {
             tempActualView = actualView;
+            tempTitle = views.transform.GetChild(tempActualView).gameObject.GetComponent<ViewScript>().title;
             actualView += 1;
-            StartCoroutine(Transiction(speedTransiction));
+            StartCoroutine(Transiction(speedTransiction, 540*2, 540));
         }
     }
 
@@ -78,7 +82,11 @@ public class AppManager : MonoBehaviour
         {
             tempActualView = actualView;
             actualView -= 1;
-            StartCoroutine(Transiction(speedTransiction));
+            if (actualView > 0)
+                tempTitle = views.transform.GetChild(tempActualView).gameObject.GetComponent<ViewScript>().title;
+            else
+                tempTitle = "";
+            StartCoroutine(Transiction(speedTransiction, -100, 540));
         }
     }
 
@@ -86,16 +94,16 @@ public class AppManager : MonoBehaviour
 
         tempActualView = actualView;
         actualView = 0;
-        StartCoroutine(Transiction(speedTransiction));
+        StartCoroutine(Transiction(speedTransiction, -100,540));
     }
 
 
-    private IEnumerator Transiction(float speed)
+    private IEnumerator Transiction(float speed, float start, float stop)
     {
         float t = 0f;
         isTransiction= true;
-        Vector2 startpos = new Vector2(-100, views.transform.GetChild(0).position.y);
-        Vector2 endpos = new Vector2(540, views.transform.GetChild(0).position.y);
+        Vector2 startpos = new Vector2(start, views.transform.GetChild(0).position.y);
+        Vector2 endpos = new Vector2(stop, views.transform.GetChild(0).position.y);
         while (t < 0.5f)
         {
             t += Time.deltaTime; 
