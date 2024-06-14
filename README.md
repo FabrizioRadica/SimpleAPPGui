@@ -1,6 +1,7 @@
 # SimpleAPPGui
 Simple APP Gui for Unity3D
 
+Remember to switch into Android Platform :)
 
 UX FLAT ICON (FREE) By
 https://assetstore.unity.com/packages/2d/gui/icons/ux-flat-icons-free-202525
