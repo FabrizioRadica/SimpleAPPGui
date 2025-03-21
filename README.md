@@ -43,3 +43,18 @@ UX FLAT ICON (FREE) By
 https://assetstore.unity.com/packages/2d/gui/icons/ux-flat-icons-free-202525
 
 
+## SUPPORT 
+If my work is coming in handy for you to study AI or for your commercial projects or you simply like me, you can support me :)
+
+<a href="https://www.buymeacoffee.com/fabbroz"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=fabbroz&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
+
+... and yes.. I'm an Amiga Lover ;)
+
+```
+    _                _                _  _   _____                
+   / \   _ __ ___   (_)  __ _   __ _ | || | | ____|__   __ ___ _ __ 
+  / _ \ | '_ ` _ \  | | / _` | / _` || || | |  _| \ \ / // _ \ '__|
+ / ___ \| | | | | | | || (_| || (_| || || | | |___ \ V /|  __/ |   
+/_/   \_\_| |_| |_| |_| \__, | \__,_||_||_| |_____| \_/  \___|_|   
+                        |___/                                      
+```
